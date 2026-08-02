@@ -1,0 +1,13 @@
+{
+  "name": "filmlocations",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.35",
+    "tailwindcss": "2.2.19"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./frontend/src/styles.css -o ./frontend/styles.css --minify",
+    "build": "npm run build:css"
+  }
+}
