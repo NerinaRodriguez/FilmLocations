@@ -16,93 +16,100 @@
     <div id="map" class="divColumn"></div>
     
     <div class="divColumn">
-      <label>Title</label>
-      <div class="divSelect"><input type="text" id="title" name="title"></div>
-      <div class="divSelect">
-        <select id="optionsTitle" name="optionsTitle">
-          <option value="is">IS</option>
-          <option value="starts">STARTS WITH</option>
-          <option value="contains">CONTAINS</option>
-        </select>
+      <h2>Search by film details</h2>
+      <div class="field-row">
+        <label for="title">Title</label>
+        <div class="divSelect"><input type="text" id="title" name="title"></div>
+        <div class="divSelect">
+          <select id="optionsTitle" name="optionsTitle">
+            <option value="is">IS</option>
+            <option value="starts">STARTS WITH</option>
+            <option value="contains">CONTAINS</option>
+          </select>
+        </div>
+        <div id="divSuggestionsTitle" class="divSuggestions" style="display:none">
+          <ul id="listSuggestionsTitle" class="listSuggestions"></ul>
+        </div>
       </div>
-      <div id="divSuggestionsTitle" class="divSuggestions" style="display:none">
-        <ul id="listSuggestionsTitle" class="listSuggestions">
-        </ul>
-      </div>
-      <br><br>
 
-      <label>Production Company</label>
-      <div class="divSelect"><input type="text" id="company" name="company"></div>
-      <div class="divSelect">
-        <select id="optionsCompany" name="optionsCompany">
-          <option value="is">IS</option>
-          <option value="starts">STARTS WITH</option>
-          <option value="contains">CONTAINS</option>
-        </select>
+      <div class="field-row">
+        <label for="company">Production Company</label>
+        <div class="divSelect"><input type="text" id="company" name="company"></div>
+        <div class="divSelect">
+          <select id="optionsCompany" name="optionsCompany">
+            <option value="is">IS</option>
+            <option value="starts">STARTS WITH</option>
+            <option value="contains">CONTAINS</option>
+          </select>
+        </div>
+        <div id="divSuggestionsCompany" class="divSuggestions" style="display:none">
+          <ul id="listSuggestionsCompany" class="listSuggestions"></ul>
+        </div>
       </div>
-      <div id="divSuggestionsCompany" class="divSuggestions" style="display:none">
-        <ul id="listSuggestionsCompany" class="listSuggestions">
-        </ul>
+
+      <div class="field-row">
+        <label for="distributor">Distributor</label>
+        <div class="divSelect"><input type="text" id="distributor" name="distributor"></div>
+        <div class="divSelect">
+          <select id="optionsDistributor" name="optionsDistributor">
+            <option value="is">IS</option>
+            <option value="starts">STARTS WITH</option>
+            <option value="contains">CONTAINS</option>
+          </select>
+        </div>
+        <div id="divSuggestionsDistributor" class="divSuggestions" style="display:none">
+          <ul id="listSuggestionsDistributor" class="listSuggestions"></ul>
+        </div>
       </div>
-      <br><br>
-      
-      <label>Distributor</label>
-      <div class="divSelect"><input type="text" id="distributor" name="distributor"></div>
-      <div class="divSelect">
-        <select id="optionsDistributor" name="optionsDistributor">
-          <option value="is">IS</option>
-          <option value="starts">STARTS WITH</option>
-          <option value="contains">CONTAINS</option>
-        </select>
+
+      <div class="field-row">
+        <label for="director">Director</label>
+        <div class="divSelect"><input type="text" id="director" name="director"></div>
+        <div class="divSelect">
+          <select id="optionsDirector" name="optionsDirector">
+            <option value="is">IS</option>
+            <option value="starts">STARTS WITH</option>
+            <option value="contains">CONTAINS</option>
+          </select>
+        </div>
+        <div id="divSuggestionsDirector" class="divSuggestions" style="display:none">
+          <ul id="listSuggestionsDirector" class="listSuggestions"></ul>
+        </div>
       </div>
-      <div id="divSuggestionsDistributor" class="divSuggestions" style="display:none">
-        <ul id="listSuggestionsDistributor" class="listSuggestions">
-        </ul>
+
+      <div class="field-row">
+        <label for="writer">Writer</label>
+        <div class="divSelect"><input type="text" id="writer" name="writer"></div>
+        <div class="divSelect">
+          <select id="optionsWriter" name="optionsWriter">
+            <option value="is">IS</option>
+            <option value="starts">STARTS WITH</option>
+            <option value="contains">CONTAINS</option>
+          </select>
+        </div>
+        <div id="divSuggestionsWriter" class="divSuggestions" style="display:none">
+          <ul id="listSuggestionsWriter" class="listSuggestions"></ul>
+        </div>
       </div>
-      <br><br>
-      
-      <label>Director</label>
-      <div class="divSelect"><input type="text" id="director" name="director"></div>
-      <div class="divSelect">
-        <select id="optionsDirector" name="optionsDirector">
-          <option value="is">IS</option>
-          <option value="starts">STARTS WITH</option>
-          <option value="contains">CONTAINS</option>
-        </select>
+
+      <div class="field-row">
+        <label>Release Year</label>
+        <div class="divRelease">
+          <div>
+            <span>Min</span>
+            <input type="number" id="minimum" min="0" name="minimum">
+          </div>
+          <div>
+            <span>Max</span>
+            <input type="number" id="maximum" min="0" name="maximum">
+          </div>
+        </div>
       </div>
-      <div id="divSuggestionsDirector" class="divSuggestions" style="display:none">
-        <ul id="listSuggestionsDirector" class="listSuggestions">
-        </ul>
+
+      <div class="button-row">
+        <button type="button" class="primary" onclick="apply()">Apply</button>
+        <button type="button" class="secondary" onclick="clearInputs()">Clear All</button>
       </div>
-      <br><br>
-      
-      <label>Writer</label>
-      <div class="divSelect"><input type="text" id="writer" name="writer"></div>
-      <div class="divSelect">
-        <select id="optionsWriter" name="optionsWriter">
-          <option value="is">IS</option>
-          <option value="starts">STARTS WITH</option>
-          <option value="contains">CONTAINS</option>
-        </select>
-      </div>
-      <div id="divSuggestionsWriter" class="divSuggestions" style="display:none">
-        <ul id="listSuggestionsWriter" class="listSuggestions">
-        </ul>
-      </div>
-      <br><br>
-      
-      <label>Release Year</label>
-      <div class="divRelease">Min
-        <input type="number" id="minimum" min="0" name="minimum">
-      </div>
-      <div class="divRelease">Max
-        <input type="number" id="maximum" min="0" name="maximum">
-      </div>
-      <br><br>
-      
-      <button type="button" onclick="apply()">Apply</button>
-      <button type="button" onclick="clearInputs()">Clear All</button>
-      <br><br>
     </div>
   </div>
 

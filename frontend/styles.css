@@ -1,103 +1,234 @@
 body {
-  background-color: #f7f7f7;
-  line-height: 1.6;
+  background-color: #eef3f8;
+  color: #232a35;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 header {
-  background-color: #a7a7a7;
-  color: white;
-  padding: 5px;
+  background: linear-gradient(135deg, #2f5af4, #8878ff);
+  color: #fff;
+  padding: 24px 20px;
   text-align: center;
-  margin-bottom: 20px;
+  box-shadow: 0 12px 30px rgba(31, 56, 115, 0.12);
 }
 
 h1 {
-  font: bold 100% monospace;
-  font-size: 40px;
+  margin: 0;
+  font-size: clamp(2rem, 2.6vw, 3.2rem);
+  letter-spacing: 0.08em;
 }
 
-label {
-  font: bold 100% monospace;
-  font-size: 15px;
-  color: #333;
-  margin-bottom: 5px;
-  display: block; /* to fill the entire width */
-}
-
-button {
-  font: bold 100% monospace;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-input:focus {
-  border-color: black;
-}
-
-select {
-  width: 40%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Styles according to ID */
 #divBody {
-  display: flex; /* to be able to easily divide the container into columns */
-  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(360px, 1.1fr) 0.9fr;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1300px;
+  margin: 0 auto 40px;
 }
 
 #map {
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 760px;
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(32, 56, 94, 0.14);
+  overflow: hidden;
 }
 
-/* Styles according to class */
+.divColumn {
+  display: block;
+}
+
+.divColumn:last-child {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(41, 72, 126, 0.1);
+}
+
+.divColumn:last-child h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #1f2a4e;
+}
+
+.divColumn:last-child p {
+  margin: 10px 0 24px;
+  color: #5b6471;
+  line-height: 1.7;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #d3dce6;
+  background: #f8fbff;
+  font-size: 0.95rem;
+  color: #1f2a44;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #7c86ff;
+  box-shadow: 0 0 0 4px rgba(124, 134, 255, 0.16);
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button.primary {
+  background: linear-gradient(135deg, #5d6bff, #2c4ef8);
+  color: white;
+  box-shadow: 0 18px 35px rgba(44, 78, 248, 0.18);
+}
+
+button.secondary {
+  background: #f1f5fb;
+  color: #334155;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.field-row label {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+
+.field-row .divSelect,
+.field-row .divRelease {
+  width: 100%;
+  margin-right: 0;
+}
+
+.field-row .divSelect {
+  margin-bottom: 0;
+}
+
+.divSelect {
+  margin-bottom: 14px;
+}
+
+.divRelease {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.divRelease div {
+  display: flex;
+  flex-direction: column;
+}
+
+.divRelease span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
 .divSuggestions {
   position: absolute;
-  font-size: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  margin-top: 5px;
+  width: calc(100% - 16px);
+  top: 100%;
+  left: 0;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 35px rgba(35, 66, 128, 0.12);
+  margin-top: 10px;
   z-index: 9999;
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 220px;
+  border: 1px solid #e5ebf5;
 }
 
 .listSuggestions {
-  list-style-type: none;
-  padding: 10px;
+  list-style: none;
+  padding: 14px;
   margin: 0;
+}
+
+.listSuggestions li {
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
 }
 
 .listSuggestions li:hover {
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #eef2ff;
 }
 
-.divRelease {
-  display: inline-block;
-  width: 10%;
-  margin-right: 20px;
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
 }
 
-.divSelect {
-  display: inline-block;
-  width: 40%;
-  margin-right: 20px;
+.divColumn:last-child .button-row {
+  justify-content: flex-start;
 }
 
-.divColumn {
-  flex: 1; /* so that the divColumn class containers take up the same amount of space */
-  display: inline-block;
-  margin-right: 20px;
+@media (max-width: 960px) {
+  #divBody {
+    grid-template-columns: 1fr;
+  }
+
+  #map {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 620px) {
+  header {
+    padding: 20px 16px;
+  }
+
+  .divColumn:last-child {
+    padding: 20px;
+  }
+
+  input,
+  select {
+    padding: 12px 14px;
+  }
+
+  .divRelease {
+    grid-template-columns: 1fr;
+  }
 }
