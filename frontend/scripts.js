@@ -85,12 +85,25 @@ async function apply() {
 
         markers.clearLayers();
 
+        const groupedLocations = {};
         data.forEach(location => {
             if (location.latitude && location.longitude) {
-                let marker = L.marker([location.latitude, location.longitude]).addTo(markers);
-                let popupContent = '<b>' + location.title + '</b>' + '<p>' + '<b>Release Year:</b> ' + location.release_year + '<br>' + '<b>Director:</b> ' + location.director + '<br>' + '<b>Locations:</b> ' + location.locations + '</p>';
-                marker.bindPopup(popupContent)
+                const key = `${location.latitude},${location.longitude}`;
+                if (!groupedLocations[key]) {
+                    groupedLocations[key] = [];
+                }
+                groupedLocations[key].push(location);
             }
+        });
+
+        Object.values(groupedLocations).forEach(locationsAtPoint => {
+            const location = locationsAtPoint[0];
+            const popupContent = locationsAtPoint.map(loc => {
+                return '<b>' + loc.title + '</b>' + '<p>' + '<b>Release Year:</b> ' + loc.release_year + '<br>' + '<b>Director:</b> ' + loc.director + '<br>' + '<b>Locations:</b> ' + loc.locations + '</p>';
+            }).join('<hr>');
+
+            let marker = L.marker([location.latitude, location.longitude]).addTo(markers);
+            marker.bindPopup(popupContent);
         });
     } catch (err) {
         console.error('Network/fetch error in apply():', err);
