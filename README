@@ -2,7 +2,5 @@ This application is developed with PHP, JavaScript, HTML, and CSS.
 You will need to have PHP installed and internet access to get data from the API.
 
 Steps for deploying the app:
-1 - Install the local web server XAMPP.
-2 - Place the project files inside the XAMPP `htdocs` folder.
-4 - Start the server.
-5 - Open your browser and access the init.html file (for example http://localhost/FilmLocations/frontend/init.html).
+1 - Open a terminal and run this command: php -S localhost:8000 -t .
+2 - Open your browser on http://localhost:8000/frontend/init.html
