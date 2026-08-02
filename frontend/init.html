@@ -36,13 +36,16 @@
 
           <div class="space-y-6">
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="space-y-2">
+              <div class="relative space-y-2">
                 <label for="title" class="text-sm font-semibold text-gray-700">Title</label>
-                <input id="title" name="title" type="text" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Movie title" />
+                <input id="title" name="title" type="text" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Movie title" />
+                <div id="divSuggestionsTitle" class="divSuggestions absolute left-0 right-0 top-full mt-2 hidden rounded-2xl border border-gray-200 bg-white shadow-lg z-50 overflow-hidden">
+                  <ul id="listSuggestionsTitle" class="max-h-48 overflow-y-auto divide-y divide-gray-100 text-sm text-gray-900"></ul>
+                </div>
               </div>
               <div class="space-y-2">
                 <label for="optionsTitle" class="text-sm font-semibold text-gray-700">Filter</label>
-                <select id="optionsTitle" name="optionsTitle" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
+                <select id="optionsTitle" name="optionsTitle" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
                   <option value="is">IS</option>
                   <option value="starts">STARTS WITH</option>
                   <option value="contains">CONTAINS</option>
@@ -51,13 +54,16 @@
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="space-y-2">
+              <div class="relative space-y-2">
                 <label for="company" class="text-sm font-semibold text-gray-700">Production Company</label>
-                <input id="company" name="company" type="text" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Company name" />
+                <input id="company" name="company" type="text" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Company name" />
+                <div id="divSuggestionsCompany" class="divSuggestions absolute left-0 right-0 top-full mt-2 hidden rounded-2xl border border-gray-200 bg-white shadow-lg z-50 overflow-hidden">
+                  <ul id="listSuggestionsCompany" class="max-h-48 overflow-y-auto divide-y divide-gray-100 text-sm text-gray-900"></ul>
+                </div>
               </div>
               <div class="space-y-2">
                 <label for="optionsCompany" class="text-sm font-semibold text-gray-700">Filter</label>
-                <select id="optionsCompany" name="optionsCompany" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
+                <select id="optionsCompany" name="optionsCompany" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
                   <option value="is">IS</option>
                   <option value="starts">STARTS WITH</option>
                   <option value="contains">CONTAINS</option>
@@ -66,13 +72,16 @@
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="space-y-2">
+              <div class="relative space-y-2">
                 <label for="distributor" class="text-sm font-semibold text-gray-700">Distributor</label>
-                <input id="distributor" name="distributor" type="text" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Distributor" />
+                <input id="distributor" name="distributor" type="text" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Distributor" />
+                <div id="divSuggestionsDistributor" class="divSuggestions absolute left-0 right-0 top-full mt-2 hidden rounded-2xl border border-gray-200 bg-white shadow-lg z-50 overflow-hidden">
+                  <ul id="listSuggestionsDistributor" class="max-h-48 overflow-y-auto divide-y divide-gray-100 text-sm text-gray-900"></ul>
+                </div>
               </div>
               <div class="space-y-2">
                 <label for="optionsDistributor" class="text-sm font-semibold text-gray-700">Filter</label>
-                <select id="optionsDistributor" name="optionsDistributor" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
+                <select id="optionsDistributor" name="optionsDistributor" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
                   <option value="is">IS</option>
                   <option value="starts">STARTS WITH</option>
                   <option value="contains">CONTAINS</option>
@@ -81,13 +90,16 @@
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="space-y-2">
+              <div class="relative space-y-2">
                 <label for="director" class="text-sm font-semibold text-gray-700">Director</label>
-                <input id="director" name="director" type="text" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Director" />
+                <input id="director" name="director" type="text" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Director" />
+                <div id="divSuggestionsDirector" class="divSuggestions absolute left-0 right-0 top-full mt-2 hidden rounded-2xl border border-gray-200 bg-white shadow-lg z-50 overflow-hidden">
+                  <ul id="listSuggestionsDirector" class="max-h-48 overflow-y-auto divide-y divide-gray-100 text-sm text-gray-900"></ul>
+                </div>
               </div>
               <div class="space-y-2">
                 <label for="optionsDirector" class="text-sm font-semibold text-gray-700">Filter</label>
-                <select id="optionsDirector" name="optionsDirector" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
+                <select id="optionsDirector" name="optionsDirector" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
                   <option value="is">IS</option>
                   <option value="starts">STARTS WITH</option>
                   <option value="contains">CONTAINS</option>
@@ -96,13 +108,16 @@
             </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="space-y-2">
+              <div class="relative space-y-2">
                 <label for="writer" class="text-sm font-semibold text-gray-700">Writer</label>
-                <input id="writer" name="writer" type="text" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Writer" />
+                <input id="writer" name="writer" type="text" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20" placeholder="Writer" />
+                <div id="divSuggestionsWriter" class="divSuggestions absolute left-0 right-0 top-full mt-2 hidden rounded-2xl border border-gray-200 bg-white shadow-lg z-50 overflow-hidden">
+                  <ul id="listSuggestionsWriter" class="max-h-48 overflow-y-auto divide-y divide-gray-100 text-sm text-gray-900"></ul>
+                </div>
               </div>
               <div class="space-y-2">
                 <label for="optionsWriter" class="text-sm font-semibold text-gray-700">Filter</label>
-                <select id="optionsWriter" name="optionsWriter" class="w-full rounded-2xl border border-gray-700 bg-gray-900 bg-opacity-80 px-4 py-3 text-sm text-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
+                <select id="optionsWriter" name="optionsWriter" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-20">
                   <option value="is">IS</option>
                   <option value="starts">STARTS WITH</option>
                   <option value="contains">CONTAINS</option>
@@ -113,17 +128,17 @@
             <div class="grid gap-4 sm:grid-cols-2">
               <div class="space-y-2">
                 <label for="minimum" class="text-sm font-semibold text-gray-700">Release Year Min</label>
-                <input id="minimum" name="minimum" type="number" min="0" class="w-full rounded-2xl border border-gray-700 bg-gray-900 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Min" />
+                <input id="minimum" name="minimum" type="number" min="0" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Min" />
               </div>
               <div class="space-y-2">
                 <label for="maximum" class="text-sm font-semibold text-gray-700">Release Year Max</label>
-                <input id="maximum" name="maximum" type="number" min="0" class="w-full rounded-2xl border border-gray-700 bg-gray-900 px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Max" />
+                <input id="maximum" name="maximum" type="number" min="0" class="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Max" />
               </div>
             </div>
 
             <div class="flex flex-wrap gap-4 pt-2">
               <button type="button" class="inline-flex items-center justify-center rounded-2xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-400" onclick="apply()">Apply</button>
-              <button type="button" class="inline-flex items-center justify-center rounded-2xl bg-gray-800 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-gray-700" onclick="clearInputs()">Clear All</button>
+              <button type="button" class="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-gray-900 border border-gray-300 transition hover:-translate-y-0.5 hover:bg-gray-100" onclick="clearInputs()">Clear All</button>
             </div>
           </div>
         </aside>
