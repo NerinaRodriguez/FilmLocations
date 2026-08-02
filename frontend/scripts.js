@@ -160,6 +160,7 @@ async function eventHandler(field, event) {
             suggestions.forEach(suggestion => {
                 const item = document.createElement('li');
                 item.textContent = suggestion[field];
+                item.className = 'cursor-pointer px-3 py-2 hover:bg-indigo-50';
                 
                 item.addEventListener('click', function () {
                     inputs[field].value = suggestion[field];
